@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="VANTA/NULL — A SIGNAL WITHOUT AN ORIGIN. A cinematic anonymous digital archive."
+    />
+    <title>VANTA/NULL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <div id="boot-screen" class="screen boot-screen" aria-live="polite">
+      <div class="boot-meta">
+        <span>VN-001 / RECOVERY INTERFACE</span>
+        <div class="signal-indicator" aria-label="signal stable">
+          <span class="signal-dot"></span>
+          <span class="signal-label">signal stable</span>
+        </div>
+      </div>
+
+      <div class="emblem" aria-label="VANTA slash NULL emblem">
+        <span class="emblem-mark"></span>
+        <span class="emblem-mark secondary"></span>
+      </div>
+
+      <h1>VANTA/NULL</h1>
+      <p class="tagline">A SIGNAL WITHOUT AN ORIGIN.</p>
+      <p class="boot-message">The archive was never meant to be found.</p>
+
+      <button id="boot-trigger" class="boot-button" type="button" aria-label="Initialize archive recovery">
+        [ PRESS ENTER TO INITIALIZE ]
+      </button>
+    </div>
+
+    <div id="archive-shell" class="archive-shell hidden" aria-live="polite">
+      <header class="topbar">
+        <div class="brand" aria-label="VANTA slash NULL brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-copy">
+            <span class="brand-name">VANTA/NULL</span>
+            <span class="brand-id">ARCHIVE // VN-001</span>
+          </div>
+        </div>
+
+        <div class="archive-meta">
+          <span class="status-pill">STATUS // RECOVERED</span>
+          <span id="session-clock" class="session-clock" aria-live="polite">00:00:00</span>
+        </div>
+      </header>
+
+      <nav class="archive-nav" aria-label="Archive sections">
+        <button class="nav-item active" type="button" data-fragment="signal">FRAGMENT 01 // SIGNAL</button>
+        <button class="nav-item" type="button" data-fragment="memory">FRAGMENT 02 // MEMORY</button>
+        <button class="nav-item" type="button" data-fragment="exit">FRAGMENT 03 // THE EXIT</button>
+      </nav>
+
+      <main class="archive-grid">
+        <section id="signal-fragment" class="fragment active" aria-label="Signal fragment">
+          <div class="section-header">
+            <p>FRAGMENT 01 — SIGNAL</p>
+            <span class="discovery-tag">recovering</span>
+          </div>
+
+          <div class="signal-panel">
+            <canvas id="signal-canvas" aria-label="Generative signal field canvas"></canvas>
+            <div class="signal-overlay">
+              <span class="signal-caption">signal lattice // autonomous</span>
+              <button id="pulse-signal" type="button" class="secondary-button">Emit pulse</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="memory-fragment" class="fragment" aria-label="Memory fragment">
+          <div class="section-header">
+            <p>FRAGMENT 02 — MEMORY</p>
+            <span class="discovery-tag">indexing</span>
+          </div>
+
+          <div class="memory-layout">
+            <article class="record-block">
+              <div class="record-label">Recovered record</div>
+              <h2>ARCHIVE NOTES</h2>
+              <ul class="record-list">
+                <li>Operator status: unregistered / unknown.</li>
+                <li>Signal signature: intermittent, not synthetic.</li>
+                <li>Archive integrity: partial but self-repairing.</li>
+              </ul>
+            </article>
+
+            <article class="record-block timeline-block">
+              <div class="record-label">Timeline</div>
+              <h2>Recovered entries</h2>
+              <ol class="timeline-list" aria-label="Recovered entries timeline">
+                <li>
+                  <span>07:20</span>
+                  <div>
+                    <strong>signal bloom</strong>
+                    <p>Field response observed without external trigger.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>08:31</span>
+                  <div>
+                    <strong>vanishing index</strong>
+                    <p>Metadata was stripped, leaving only pattern fragments.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>09:44</span>
+                  <div>
+                    <strong>echo trace</strong>
+                    <p>Recovery channel opened to a set of encoded clues.</p>
+                  </div>
+                </li>
+              </ol>
+            </article>
+          </div>
+
+          <div class="clue-box" aria-live="polite">
+            <h3>Recovered fragments</h3>
+            <div class="clue-row">
+              <button class="clue-button" type="button" data-clue="r">CLUE 01 // R</button>
+              <button class="clue-button" type="button" data-clue="e">CLUE 02 // E</button>
+              <button class="clue-button" type="button" data-clue="t">CLUE 03 // T</button>
+            </div>
+            <p id="clue-status" class="clue-status">Clues are dormant. The archive is still listening.</p>
+          </div>
+        </section>
+
+        <section id="exit-fragment" class="fragment" aria-label="Exit fragment">
+          <div class="section-header">
+            <p>FRAGMENT 03 — THE EXIT</p>
+            <span class="discovery-tag">sealed</span>
+          </div>
+
+          <div class="exit-shell">
+            <div class="exit-header">
+              <span class="terminal-tag">TERMINAL // EXIT GATE</span>
+            </div>
+
+            <div id="exit-lock" class="exit-lock">
+              <p class="exit-copy">The final archive door remains sealed.</p>
+              <p class="exit-copy subtle">The required sequence has not been reconstructed.</p>
+            </div>
+
+            <div id="puzzle-shell" class="puzzle-shell hidden" aria-live="polite">
+              <div class="puzzle-meta">
+                <span>final codeword</span>
+                <button id="restart-puzzle" type="button" class="ghost-button">reseed</button>
+              </div>
+
+              <form id="puzzle-form" class="puzzle-form">
+                <label for="puzzle-input" class="sr-only">Enter the final codeword</label>
+                <input id="puzzle-input" name="puzzle-input" type="text" autocomplete="off" spellcheck="false" />
+                <button type="submit" class="secondary-button">unlock</button>
+              </form>
+              <p id="puzzle-feedback" class="puzzle-feedback" aria-live="polite"></p>
+            </div>
+
+            <div id="exit-message" class="exit-message hidden" aria-live="polite">
+              <p>EXIT UNLOCKED</p>
+              <h2>The archive did not vanish. It was waiting for a signal.</h2>
+              <p class="exit-copy subtle">A final trace remains: the operator was never named, only implied.</p>
+            </div>
+          </div>
+        </section>
+
+        <aside class="terminal-panel" aria-label="System terminal panel">
+          <div class="panel-header">
+            <span>TERMINAL</span>
+            <button id="reset-terminal" type="button" class="ghost-button">reset</button>
+          </div>
+
+          <div id="terminal-output" class="terminal-output" aria-live="polite"></div>
+
+          <div class="terminal-input-row">
+            <label for="terminal-input" class="terminal-prompt">vanta@null:~$</label>
+            <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal command input" />
+          </div>
+        </aside>
+
+        <aside class="log-panel" aria-label="Archive log panel">
+          <div class="panel-header">
+            <span>ARCHIVE LOG</span>
+            <button id="replay-intro" type="button" class="ghost-button">replay init</button>
+          </div>
+
+          <ul id="archive-log" class="archive-log" aria-live="polite">
+            <li>Archive initialized.</li>
+            <li>Fragment access recorded.</li>
+            <li>Signal recovered.</li>
+          </ul>
+        </aside>
+      </main>
+
+      <footer class="system-footer">
+        <div>
+          <span>BUILD // VN-001.01</span>
+          <span>ARCHIVE // partially recovered</span>
+        </div>
+        <p>A signal without an origin remains a question worth asking.</p>
+      </footer>
+    </div>
+
+    <script src="./src/archive.js"></script>
+    <script src="./src/terminal.js"></script>
+    <script src="./src/puzzle.js"></script>
+    <script src="./src/experiments/signal.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
