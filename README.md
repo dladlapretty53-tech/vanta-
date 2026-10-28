@@ -84,7 +84,7 @@ Three clues are spread across the archive interface. After all are discovered, a
 
 ## Deploy to Render
 
-The repository includes a Render Blueprint in `render.yaml` for a static site. It serves the project root directly; no package installation or build step is needed.
+The repository includes a Render Blueprint in `render.yaml` for a static site. Its small build command copies the HTML, CSS, and JavaScript files into a publish directory; no packages or framework are required.
 
 To create the Render service:
 

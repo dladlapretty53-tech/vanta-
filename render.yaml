@@ -2,6 +2,6 @@ services:
   - type: web
     name: vanta-null
     runtime: static
-    buildCommand: echo "Static site - no build step required"
-    staticPublishPath: .
+    buildCommand: mkdir -p dist && cp index.html styles.css dist/ && cp -R src dist/src
+    staticPublishPath: dist
     autoDeploy: true
