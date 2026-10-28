@@ -82,17 +82,18 @@ Three clues are spread across the archive interface. After all are discovered, a
 - Update terminal responses in `src/terminal.js`.
 - Tune particle behavior in `src/experiments/signal.js`.
 
-## GitHub Pages / deployment
+## Deploy to Render
 
-This workspace is not currently a Git repository and there is no verified GitHub Pages configuration in the available project setup. To deploy later:
+The repository includes a Render Blueprint in `render.yaml` for a static site. It serves the project root directly; no package installation or build step is needed.
 
-1. Push the files to a GitHub repository.
-2. Open the repository Settings.
-3. Navigate to Pages.
-4. Choose the branch and root folder (often `main` and `/root` for static sites).
-5. Save the deployment.
+To create the Render service:
 
-Because the project is a static HTML/CSS/JS site, GitHub Pages is a natural fit without needing a build step.
+1. Sign in to [Render](https://dashboard.render.com/) and connect GitHub if prompted.
+2. Select **New** → **Blueprint**.
+3. Choose the `dladlapretty53-tech/vanta-` repository and deploy the `main` branch.
+4. Render reads `render.yaml` and publishes the site at its assigned `onrender.com` address.
+
+Automatic deploys are enabled, so later commits pushed to `main` will redeploy the site.
 
 ## Known limitations
 

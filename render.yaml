@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: vanta-null
+    runtime: static
+    buildCommand: echo "Static site: no build step required"
+    staticPublishPath: .
+    autoDeploy: true
